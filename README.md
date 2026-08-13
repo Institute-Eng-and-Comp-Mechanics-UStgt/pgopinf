@@ -95,5 +95,5 @@ Further details of the individual methods can be found in the documentation.
 [doi-url]: https://doi.org/10.18419/darus-4446
 [arxiv-shield]: https://img.shields.io/badge/arXiv-2408.08185-b31b1b.svg
 [arxiv-url]: https://doi.org/10.48550/arXiv.2408.08185
-[docs-url]: https://Institute-Eng-and-Comp-Mechanics-UStgt.github.io/ApHIN
+[docs-url]: https://johannesrettberg.github.io/PortHamiltonianInference/
 [docs-shield]: https://img.shields.io/badge/docs-online-blue.svg
