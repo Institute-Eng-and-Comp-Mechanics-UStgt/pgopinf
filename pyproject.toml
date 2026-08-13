@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pgopinf"
+version = "0.1.0"
+description = "Python package for Petrov-Galerkin operator inference."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Johannes Rettberg" },
+  { name = "Jonas Nicodemus"},
+]
+dependencies = [
+  "numpy==2.5.0",
+  "scipy==1.18.0",
+  "slycot==0.6.1", # Slycot 0.7 is not compatible with pymor
+  "pymor==2025.2.2",
+  "tqdm==4.68.3",
+  "control==0.10.2",
+  "cvxpy==1.9.2",
+  "pandas==3.0.3",
+  "mosek==11.2.2",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest==9.1.1",
+]
+
+docs = [
+  "sphinx",
+  "myst-parser",
+  "pydata-sphinx-theme",
+  "sphinx-autodoc-typehints",
+]
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
