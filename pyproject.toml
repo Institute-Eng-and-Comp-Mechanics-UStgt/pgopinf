@@ -16,7 +16,7 @@ authors = [
 dependencies = [
   "numpy==2.5.0",
   "scipy==1.18.0",
-  "slycot==0.6.1", # Slycot 0.7 is not compatible with pymor
+  "slycot==0.6.1", # Slycot 0.7 is not compatible with pymor 2025.2.2
   "pymor==2025.2.2",
   "tqdm==4.68.3",
   "control==0.10.2",

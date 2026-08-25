@@ -19,7 +19,7 @@ def truncation(d, L, trunc_tol=1e-12):
     tmp = R @ np.diag(d) @ R.conj().T
     tmp = hermitian_part(tmp)  # Ensure symmetry for eigen
 
-    d_vals, U = linalg.eigh(tmp)
+    d_vals, U = linalg.eigh(tmp, driver="evd")
 
     # Sort by absolute value descending
     p = np.argsort(np.abs(d_vals))[::-1]
@@ -38,7 +38,10 @@ def lrcholesky(X, trunc_tol=1e-12):
     Low-rank approximate Cholesky-like factorization X = L * L.H
     """
     X_h = hermitian_part(X)
-    d, L = linalg.eigh(X_h)
+    # Use the divide-and-conquer LAPACK driver explicitly.
+    # The default EVR driver can fail with "Internal Error" on some
+    # Windows/OpenBLAS configurations.
+    d, L = linalg.eigh(X_h, driver="evd")
 
     # remove negative eigenvalues (numerical errors)
     idx = d >= 0

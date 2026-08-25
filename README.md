@@ -22,18 +22,41 @@ Data-driven model order reduction methods such as operator inference enable the 
  
 ## Installation
 
-Clone this repository and install it to your local environment as package using pip:
- #TODO
+Clone the repository and create a Conda environment with Python 3.14. 
+If Conda is not installed yet, see [Installing Conda](#installing-conda):
+
 ```bash
-git clone git@github.com:JohannesRettberg/PortHamiltonianInference.git
-cd PortHamiltonianInference
-```
-Then you can activate the environment in which you want to install the package, and use pip to perform the installation.
-```bash
-pip install -e .
+git clone git@github.com:Institute-Eng-and-Comp-Mechanics-UStgt/pgopinf.git
+cd pgopinf
+
+conda create -n pgopinf python=3.14
+conda activate pgopinf
 ```
 
-> :warning: **Please note that you need pip version 24.0 to install the repository in editable mode. Either upgrade pip to the latest version or install it without the ```-e``` argument**
+### Linux / Ubuntu
+
+On Ubuntu, the package can be installed directly with pip:
+
+```bash
+python -m pip install -e .
+```
+
+### Windows
+
+On Windows, install `slycot==0.6.1` from `conda-forge` first:
+
+```bash
+conda install -c conda-forge slycot=0.6.1
+python -m pip install -e .
+```
+
+`pgopinf` uses `pymor==2025.2.2`, which is currently incompatible with `slycot>=0.7` for the functionality used here. At the same time, no suitable pip wheel for `slycot==0.6.1` is available on Windows with Python 3.14, so pip would otherwise try to build Slycot from source. Installing the pinned Slycot version from `conda-forge` avoids this issue.
+
+For development, install the optional test dependencies with:
+
+```bash
+python -m pip install -e ".[dev]"
+```
 
 
 ## Paper Experiments
@@ -83,6 +106,27 @@ The repository is organized around the general orchestration of experiments and 
 The metrics defined as `EvaluationSpec` will be calculated for individual experiments runs and saved under `results/runs`. Metrics that are defined in `StudyEvaluationSpec` for evaluations on a study run, e.g. over a set of reduced orders, will be saved in `results/studies`.
 
 Further details of the individual methods can be found in the documentation.
+
+### Installing Conda
+
+If Conda is not installed yet, install either [Anaconda Distribution](https://www.anaconda.com/download) or the smaller Miniconda distribution (registration can be skipped).
+
+On Windows, open the **Anaconda Prompt** after installation and initialize Conda for PowerShell once:
+
+```bash
+conda init powershell
+```
+
+Then close and reopen PowerShell. The `conda` command and environment activation should now work directly from PowerShell:
+
+```bash
+conda --version
+conda activate pgopinf
+```
+
+On Linux, install Anaconda or Miniconda using the corresponding installer and restart the shell after installation.
+
+
 
 ## References
 

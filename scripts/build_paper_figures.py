@@ -513,7 +513,7 @@ def build_figure2_exp3() -> None:
 
 def build_figures_exp3() -> None:
     build_figure1_exp3()
-    build_figure2_exp3()
+    # build_figure2_exp3()
 
 
 if __name__ == "__main__":
