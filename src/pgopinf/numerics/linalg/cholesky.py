@@ -38,7 +38,10 @@ def lrcholesky(X, trunc_tol=1e-12):
     Low-rank approximate Cholesky-like factorization X = L * L.H
     """
     X_h = hermitian_part(X)
-    d, L = linalg.eigh(X_h)
+    # Use the divide-and-conquer LAPACK driver explicitly.
+    # The default EVR driver can fail with "Internal Error" on some
+    # Windows/OpenBLAS configurations.
+    d, L = linalg.eigh(X_h, driver="evd")
 
     # remove negative eigenvalues (numerical errors)
     idx = d >= 0
