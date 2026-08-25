@@ -7,7 +7,7 @@ name = "pgopinf"
 version = "0.1.0"
 description = "Python package for Petrov-Galerkin operator inference."
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.14,<3.15"
 license = { file = "LICENSE" }
 authors = [
   { name = "Johannes Rettberg" },
