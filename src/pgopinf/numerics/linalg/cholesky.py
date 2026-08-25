@@ -19,7 +19,7 @@ def truncation(d, L, trunc_tol=1e-12):
     tmp = R @ np.diag(d) @ R.conj().T
     tmp = hermitian_part(tmp)  # Ensure symmetry for eigen
 
-    d_vals, U = linalg.eigh(tmp)
+    d_vals, U = linalg.eigh(tmp, driver="evd")
 
     # Sort by absolute value descending
     p = np.argsort(np.abs(d_vals))[::-1]
