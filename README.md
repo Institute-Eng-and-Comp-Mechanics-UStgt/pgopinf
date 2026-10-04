@@ -1,7 +1,6 @@
 <!-- PROJECT SHIELDS -->
 
 [![arXiv][arxiv-shield]][arxiv-url]
-[![DOI][doi-shield]][doi-url]
 [![Documentation Status][docs-shield]][docs-url]
 [![MIT License][license-shield]][license-url]
 
@@ -9,7 +8,7 @@
 A linear system inference approach with stability-encouraging data projection.
 
 ## Reference 
-The preprint is available on [arXiv](https://doi.org/).
+The preprint is available on [arXiv](https://doi.org/10.48550/arXiv.2610.01295).
 If you use this project for academic work, please consider citing it
 
 >
@@ -133,11 +132,11 @@ On Linux, install Anaconda or Miniconda using the corresponding installer and re
 [1] Johannes Rettberg, Jonas Nicodemus, Harsh Sharma, Boris Kramer, Jörg Fehr and Benjamin Unger. 
     Petrov-Galerkin operator inference with application to stability-encouraging identification. Arxiv, 2026.
 
-[license-shield]: https://img.shields.io/github/license/Institute-Eng-and-Comp-Mechanics-UStgt/ApHIN.svg
-[license-url]: https://github.com/Institute-Eng-and-Comp-Mechanics-UStgt/ApHIN/blob/main/LICENSE
+[license-shield]: https://img.shields.io/github/license/Institute-Eng-and-Comp-Mechanics-UStgt/pgopinf.svg
+[license-url]: https://github.com/Institute-Eng-and-Comp-Mechanics-UStgt/pgopinf/blob/main/LICENSE
 [doi-shield]: https://img.shields.io/badge/doi-10.18419%2Fdarus--4446-d45815.svg
 [doi-url]: https://doi.org/10.18419/darus-4446
-[arxiv-shield]: https://img.shields.io/badge/arXiv-2408.08185-b31b1b.svg
-[arxiv-url]: https://doi.org/10.48550/arXiv.2408.08185
-[docs-url]: https://johannesrettberg.github.io/PortHamiltonianInference/
+[arxiv-shield]: https://img.shields.io/badge/arXiv-2610.01295-b31b1b.svg
+[arxiv-url]: https://doi.org/10.48550/arXiv.2610.01295
+[docs-url]: https://institute-eng-and-comp-mechanics-ustgt.github.io/pgopinf/
 [docs-shield]: https://img.shields.io/badge/docs-online-blue.svg
