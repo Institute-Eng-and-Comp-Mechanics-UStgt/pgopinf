@@ -21,42 +21,27 @@ Data-driven model order reduction methods such as operator inference enable the 
  
 ## Installation
 
-Clone the repository and create a Conda environment with Python 3.14. 
-If Conda is not installed yet, see [Installing Conda](#installing-conda):
-
+Clone the repository and create a virtual environment with Python 3.14. 
 ```bash
 git clone git@github.com:Institute-Eng-and-Comp-Mechanics-UStgt/pgopinf.git
 cd pgopinf
 
-conda create -n pgopinf python=3.14
-conda activate pgopinf
+python -m venv .venv
 ```
-
-### Linux / Ubuntu
-
-On Ubuntu, the package can be installed directly with pip:
-
+Activate the `venv`:
+```bash
+source .venv/bin/activate (Linux)
+.\.venv\Scripts\activate (Windows)
+```
+Install dependencies (see also `pyproject.toml`).
 ```bash
 python -m pip install -e .
 ```
-
-### Windows
-
-On Windows, install `slycot==0.6.1` from `conda-forge` first:
-
-```bash
-conda install -c conda-forge slycot=0.6.1
-python -m pip install -e .
-```
-
-`pgopinf` uses `pymor==2025.2.2`, which is currently incompatible with `slycot>=0.7` for the functionality used here. At the same time, no suitable pip wheel for `slycot==0.6.1` is available on Windows with Python 3.14, so pip would otherwise try to build Slycot from source. Installing the pinned Slycot version from `conda-forge` avoids this issue.
-
 For development, install the optional test dependencies with:
 
 ```bash
 python -m pip install -e ".[dev]"
 ```
-
 
 ## Paper Experiments
 ### Note on Mosek
@@ -104,33 +89,7 @@ The repository is organized around the general orchestration of experiments and 
 
 The metrics defined as `EvaluationSpec` will be calculated for individual experiments runs and saved under `results/runs`. Metrics that are defined in `StudyEvaluationSpec` for evaluations on a study run, e.g. over a set of reduced orders, will be saved in `results/studies`.
 
-Further details of the individual methods can be found in the documentation.
-
-### Installing Conda
-
-If Conda is not installed yet, install either [Anaconda Distribution](https://www.anaconda.com/download) or the smaller Miniconda distribution (registration can be skipped).
-
-On Windows, open the **Anaconda Prompt** after installation and initialize Conda for PowerShell once:
-
-```bash
-conda init powershell
-```
-
-Then close and reopen PowerShell. The `conda` command and environment activation should now work directly from PowerShell:
-
-```bash
-conda --version
-conda activate pgopinf
-```
-
-On Linux, install Anaconda or Miniconda using the corresponding installer and restart the shell after installation.
-
-
-
-## References
-
-[1] Johannes Rettberg, Jonas Nicodemus, Harsh Sharma, Boris Kramer, Jörg Fehr and Benjamin Unger. 
-    Petrov-Galerkin operator inference with application to stability-encouraging identification. Arxiv, 2026.
+Further details of the individual methods can be found in the [documentation][docs-url].
 
 [license-shield]: https://img.shields.io/github/license/Institute-Eng-and-Comp-Mechanics-UStgt/pgopinf.svg
 [license-url]: https://github.com/Institute-Eng-and-Comp-Mechanics-UStgt/pgopinf/blob/main/LICENSE
